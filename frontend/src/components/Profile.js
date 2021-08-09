@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink, useLocation, useHistory } from "react-router-dom";
-import logo from '../icon-left-font-monochrome-black.svg';
+import logoDesktop from '../icon-left-font-monochrome-black.svg';
+import logoMobile from '../logo.png'
 import Post from './Post/Post.js'
 import {deletePost, getPostByUser, likePost} from '../api/post.js'
 import {isLiked} from '../api/like.js'
@@ -115,17 +116,26 @@ function Profile(props) {
     return (
         <div className="profile">
             <header>
-            <NavLink to="/timeline"><img src={logo} alt=""/></NavLink> 
+                <NavLink to="/timeline">
+                    <img className='logo__desktop' src={logoDesktop} alt=""/>   
+                    <img className='logo__mobile' src={logoMobile} alt=""/>   
+                </NavLink> 
                 <div className="header__link">
-                    <NavLink onClick={() => window.location.reload()} to={{ pathname:'/profile',
-                                state:{
-                                    idUser:localStorage.getItem("idUser"),
-                                },
-                            }}>Profil</NavLink>
-                    <NavLink to="/login">Déconnexion</NavLink>
+                    <NavLink onClick={() => window.location.reload()} to={{ 
+                        pathname:'/profile',
+                        state:{
+                            idUser:localStorage.getItem("idUser"),
+                        }}}>
+                    <p className="link__desktop">Profil</p>
+                    <i className="link__mobile fas fa-user"></i>
+                    </NavLink>
+                    <NavLink to="/login">
+                        <p className="link__desktop">Déconnexion</p>
+                        <i class="link__mobile fas fa-sign-out-alt"></i>
+                    </NavLink>
                 </div>
             </header>
-            <main>
+            <main className="profile">
                 <section className="about">
                     <div className="about__title">
                         <h1>À propos</h1>

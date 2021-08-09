@@ -28,6 +28,8 @@
 .timeline{
     background-color: #e6e6e6;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 header{
     display: grid;
@@ -45,6 +47,16 @@ header{
 
 header .header__link {
     justify-self: end;
+    align-items: baseline;
+    display: flex;
+}
+
+.link__mobile{
+    display: none;
+}
+
+.logo__mobile{
+    display: none;
 }
 
 header .header__link a{
@@ -74,8 +86,9 @@ header a img{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: clamp(300px,100%,450px);
     height: 100%;
+    align-self: center;
 }
 
 .mainPost .post__form{
@@ -152,7 +165,7 @@ header a img{
     background-color: #C4C4C4;
     position: relative;
     border-radius: 20px;
-    width: 440px ;
+    width: 100% ;
     margin: 2rem;
     padding-bottom: 1rem;
 }
@@ -248,4 +261,29 @@ header a img{
     line-height: 16px;
     letter-spacing: 0.05em;
     color: #3E3030;
+}
+
+@media (max-width:750px){
+    .link__desktop{
+        display: none;
+    }
+    .link__mobile{
+        display: block;
+    }
+    .logo__desktop{
+        display: none;
+    }
+    .logo__mobile{
+        display: block;
+    }
+    .up{
+        left:1rem;
+        bottom: -2rem;
+        top:unset;
+    }
+    .down{
+        left:7rem;
+        bottom: -2rem;
+        top:unset;
+    }
 }
