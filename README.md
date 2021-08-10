@@ -1,6 +1,8 @@
 ﻿# DavidChanteau_7_07_06_2021
 
-## Download tablePlus
+## Download tablePlus or just create your database locally with the information in ./backend/config/config.js
+
+# With TablePlus
 
 ## Create a new connection, information are in ./backend/config/config.js
 	Set a name , host as localhost, a user and a password (admin and admin)
