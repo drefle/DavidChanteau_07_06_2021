@@ -6,11 +6,24 @@ const commentRoutes = require('./routes/comment');
 const likeRoutes = require('./routes/like');
 const path = require('path');
 const helmet = require('helmet');
+const es = require('express-sanitize');
+const cookieSession = require('cookie-session');
+require('dotenv').config();
 
 
 const app = express();
+app.use(es);
 
 app.use(helmet());
+app.use(cookieSession({
+  name: 'session',
+  keys: [process.env.SES_KEY1, process.env.SES_KEY2],
+  cookie: {
+    httpOnly: true,
+    maxAge: 900000,
+    secure: true,
+  }
+}))
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
