@@ -129,7 +129,7 @@ function Profile(props) {
                     <p className="link__desktop">Profil</p>
                     <i className="link__mobile fas fa-user"></i>
                     </NavLink>
-                    <NavLink to="/login">
+                    <NavLink to="/login" onClick={()=> localStorage.clear()}>
                         <p className="link__desktop">Déconnexion</p>
                         <i class="link__mobile fas fa-sign-out-alt"></i>
                     </NavLink>
