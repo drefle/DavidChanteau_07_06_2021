@@ -34,9 +34,6 @@ function Login() {
             },
             body: JSON.stringify(data)
             }).then( response => {
-                if(response.ok){
-                    setRedirect(true)
-                }
                 return response.json()
             })
             .then(responseData => {
@@ -47,6 +44,7 @@ function Login() {
                     localStorage.setItem("idUser",responseData.idUser)
                     localStorage.setItem("isAdmin",Boolean(responseData.isAdmin))
                     localStorage.setItem("token",responseData.token)
+                    setRedirect(true)
                 }
             }).catch((e)=>{
                 console.log(e)
