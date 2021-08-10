@@ -102,11 +102,11 @@ function Comment (props) {
             <form className="comment__form" onSubmit={handleComment}>
 
                 <div className="container__textComment">
-                    <textarea id={props.id} name="create_comment" maxLength="400" placeholder="Écrivez un commentaire !" onChange={handleChangeComment} cols="40" rows="10">
+                    <textarea aria-label="Zone de commentaire" id={props.id} name="create_comment" maxLength="400" placeholder="Écrivez un commentaire !" onChange={handleChangeComment} cols="40" rows="10">
                     
                     </textarea>
                     
-                    <button type="submit">
+                    <button type="submit" aria-label="Commenter la publication">
                         <i class="fas fa-share"></i>
                     </button>
                 </div>

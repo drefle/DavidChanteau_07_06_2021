@@ -146,8 +146,8 @@ function Timeline(){
         <div className="timeline">
             <header>
                 <NavLink to="/timeline">
-                    <img className='logo__desktop' src={logoDesktop} alt=""/>   
-                    <img className='logo__mobile' src={logoMobile} alt=""/>   
+                    <img className='logo__desktop' src={logoDesktop} alt="logo groupomania desktop"/>   
+                    <img className='logo__mobile' src={logoMobile} alt="logo groupomania mobile"/>   
                 </NavLink> 
                 <div className="header__link">
                     <NavLink to={{ 
@@ -155,11 +155,11 @@ function Timeline(){
                         state:{
                             idUser:parseInt(localStorage.getItem("idUser")),
                         }}}>
-                        <p className="link__desktop">Profil</p>
+                        <h1 className="link__desktop">Profil</h1>
                         <i className="link__mobile fas fa-user"></i>
                     </NavLink>
                     <NavLink to="/login" onClick={()=> localStorage.clear()}>
-                        <p className="link__desktop">Déconnexion</p>
+                        <h1 className="link__desktop">Déconnexion</h1>
                         <i class="link__mobile fas fa-sign-out-alt"></i>
                     </NavLink>
                 </div>
@@ -169,7 +169,7 @@ function Timeline(){
                 <form className="post__form" onSubmit={handlePost}>
 
                     <div className="container__text">
-                        <textarea name="create_post" maxLength="400" placeholder="Partagez vos pensées !" onChange={handleChangePost} cols="40" rows="10">
+                        <textarea aria-label="Zone de post"id="create_post" name="create_post" maxLength="400" placeholder="Partagez vos pensées !" onChange={handleChangePost} cols="40" rows="10">
                         
                         </textarea>
                     </div>

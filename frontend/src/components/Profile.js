@@ -117,8 +117,8 @@ function Profile(props) {
         <div className="profile">
             <header>
                 <NavLink to="/timeline">
-                    <img className='logo__desktop' src={logoDesktop} alt=""/>   
-                    <img className='logo__mobile' src={logoMobile} alt=""/>   
+                    <img className='logo__desktop' src={logoDesktop} alt="logo groupomania desktop"/>   
+                    <img className='logo__mobile' src={logoMobile} alt="logo groupomania mobile"/>   
                 </NavLink> 
                 <div className="header__link">
                     <NavLink onClick={() => window.location.reload()} to={{ 
@@ -126,11 +126,11 @@ function Profile(props) {
                         state:{
                             idUser:localStorage.getItem("idUser"),
                         }}}>
-                    <p className="link__desktop">Profil</p>
+                    <h1 className="link__desktop">Profil</h1>
                     <i className="link__mobile fas fa-user"></i>
                     </NavLink>
                     <NavLink to="/login" onClick={()=> localStorage.clear()}>
-                        <p className="link__desktop">Déconnexion</p>
+                        <h1 className="link__desktop">Déconnexion</h1>
                         <i class="link__mobile fas fa-sign-out-alt"></i>
                     </NavLink>
                 </div>
